@@ -6,6 +6,12 @@ import RockPaperScissors from "./components/RockPaperScissorsDetail";
 const StyledApp = styled.div`
     background-color: var(--color-dark-blue-500);
     color: #fff;
+    margin-top: 6.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 function App() {
