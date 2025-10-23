@@ -1,10 +1,33 @@
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./components/Header";
-import RockPaperScissors from "./components/RockPaperScissorsDetail";
+import RockPaperScissorsDetail from "./components/RockPaperScissorsDetail";
+
+const moves = [
+    {
+        name: "rock",
+        value: 1,
+        icon: "/public/images/icon-rock.svg",
+        color: "--color-red-300",
+        shadow: "rgba(221, 64, 93, 0.6)",
+    },
+    {
+        name: "paper",
+        value: 2,
+        icon: "/public/images/icon-paper.svg",
+        color: "--color-blue-300",
+        shadow: "rgba(86, 113, 245, 0.6)",
+    },
+    {
+        name: "scissor",
+        value: 0,
+        icon: "/public/images/icon-scissors.svg",
+        color: "--color-yellow-300",
+        shadow: "rgba(236, 169, 34, 0.6)",
+    },
+];
 
 const StyledApp = styled.div`
-    background-color: var(--color-dark-blue-500);
     color: #fff;
     margin-top: 6.4rem;
 
@@ -14,14 +37,30 @@ const StyledApp = styled.div`
     justify-content: center;
 `;
 
+const Rules = styled.button`
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
+
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-radius: 0.8rem;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1.5rem 4.8rem;
+`;
+
 function App() {
     return (
         <>
             <GlobalStyles />
             <StyledApp>
                 <Header />
-                <RockPaperScissors />
+                <RockPaperScissorsDetail moves={moves} />
             </StyledApp>
+            <Rules>rules</Rules>
         </>
     );
 }

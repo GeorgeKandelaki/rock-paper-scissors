@@ -5,12 +5,13 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    max-width: 65rem;
+    max-width: 75rem;
     width: 100%;
     padding: 2.7rem 2.4rem;
     border-radius: 1.5rem;
     border: 3px solid var(--outline-header);
 `;
+
 const Headline = styled.p`
     font-size: 4rem;
     color: #fff;

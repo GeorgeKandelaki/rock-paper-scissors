@@ -5,20 +5,20 @@ const GlobalStyles = createGlobalStyle`
 
     :root {
         // Primary
-        --color-yellow-300:hsl(40, 84%, 53%);
-        --color-yellow-400:hsl(39, 89%, 49%);
+        --color-yellow-300:rgba(236, 169, 34, 1);
+        --color-yellow-400:rgba(236, 158, 14, 1);
 
-        --color-blue-300:hsl(230, 89%, 65%);
-        --color-blue-400:hsl(230, 89%, 62%);
+        --color-blue-300:rgba(86, 113, 245, 1);
+        --color-blue-400:rgba(72, 101, 244, 1);
 
-        --color-red-300:hsl(349, 70%, 56%);
-        --color-red-400:hsl(349, 71%, 52%);
+        --color-red-300:rgba(221, 64, 93, 1);
+        --color-red-400:rgba(220, 46, 78, 1);
 
-        --color-purple-300:hsl(261, 72%, 63%);
-        --color-purple-400:hsl(261, 73%, 60%) ;
+        --color-purple-300:rgba(140, 93, 229, 1);
+        --color-purple-400:rgba(131, 79, 227, 1) ;
 
-        --color-cyan-300:hsl(189, 58%, 57%); 
-        --color-cyan-400:hsl(189, 59%, 53%);
+        --color-cyan-300:rgba(82, 190, 209, 1); 
+        --color-cyan-400:rgba(64, 185, 206, 1);
 
         // Neutral
         --text-dark:hsl(229, 25%, 31%);
@@ -48,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
         min-height: 100vh;
         background: linear-gradient(var(--color-dark-blue-500));
         background-size: cover;
+        overflow: hidden;
     }
 `;
 
