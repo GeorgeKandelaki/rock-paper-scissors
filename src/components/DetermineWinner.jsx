@@ -1,5 +1,5 @@
 function DetermineWinner() {
-    return <div></div>;
+    return <div>DETERMINING WINNER...</div>;
 }
 
 export default DetermineWinner;

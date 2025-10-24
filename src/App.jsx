@@ -8,22 +8,22 @@ const moves = [
         name: "rock",
         value: 1,
         icon: "/public/images/icon-rock.svg",
-        color: "--color-red-300",
-        shadow: "rgba(221, 64, 93, 0.6)",
+        borderColor: "--color-red-300",
+        borderShadow: "rgba(221, 64, 93, 0.6)",
     },
     {
         name: "paper",
         value: 2,
         icon: "/public/images/icon-paper.svg",
-        color: "--color-blue-300",
-        shadow: "rgba(86, 113, 245, 0.6)",
+        borderColor: "--color-blue-300",
+        borderShadow: "rgba(86, 113, 245, 0.6)",
     },
     {
         name: "scissor",
         value: 0,
         icon: "/public/images/icon-scissors.svg",
-        color: "--color-yellow-300",
-        shadow: "rgba(236, 169, 34, 0.6)",
+        borderColor: "--color-yellow-300",
+        borderShadow: "rgba(236, 169, 34, 0.6)",
     },
 ];
 
@@ -41,6 +41,7 @@ const Rules = styled.button`
     position: absolute;
     right: 1%;
     bottom: 2%;
+    cursor: pointer;
 
     font-weight: 500;
     text-transform: uppercase;
@@ -50,6 +51,11 @@ const Rules = styled.button`
     border: 1px solid #fff;
     color: #fff;
     padding: 1.5rem 4.8rem;
+    transition: all 0.3s;
+
+    &:hover {
+        opacity: 0.5;
+    }
 `;
 
 function App() {

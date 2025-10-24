@@ -31,10 +31,12 @@ const GlobalStyles = createGlobalStyle`
         --color-dark-blue-600:hsl(214, 47%, 23%);
     }
 
-    * {
+    *, *::before, *::after {
         padding: 0;
         margin: 0;
         box-sizing:border-box;
+        transition: background-color 0.3s, border 0.3s;
+
     }
 
     html{
@@ -46,9 +48,18 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.6rem;
         line-height: 1;
         min-height: 100vh;
-        background: linear-gradient(var(--color-dark-blue-500));
+        background: linear-gradient(var(--color-dark-blue-600));
         background-size: cover;
         overflow: hidden;
+
+        transition: color 0.3s, background-color 0.3s;
+        
+    }
+
+    @media (max-width: 76em){
+        html{
+            font-size: 50%;
+        }
     }
 `;
 

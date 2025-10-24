@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const StyledMove = styled.div`
-    padding: 4rem;
+    padding: ${(props) => props.padding};
     border-radius: 50%;
     background-color: #fff;
     border: 2.5rem solid var(${(props) => props.borderColor});
-    box-shadow: 0 0.8rem rgba(0, 0, 0, 0.15) inset, 0 0.8rem 0 0.2rem ${(props) => props.borderShadow};
+    box-shadow: 0 1.2rem rgba(0, 0, 0, 0.15) inset, 0 1rem 1px 2px ${(props) => props.borderShadow};
 
     display: flex;
     justify-content: center;
@@ -16,15 +16,24 @@ const Icon = styled.div`
     width: 100%;
 
     & img {
-        width: 7rem;
-        height: 7rem;
+        width: ${(props) => props.iconWidth};
+        height: ${(props) => props.iconsHeight};
     }
 `;
 
-function Move({ moveName, value, onClick, borderColor, borderShadow, icon = "" }) {
+function Move({
+    moveName,
+    onClick,
+    borderColor,
+    borderShadow,
+    icon = "",
+    padding = "4rem",
+    iconWidth = "7rem",
+    iconHeight = "7rem",
+}) {
     return (
-        <StyledMove onClick={() => onClick?.()} borderColor={borderColor} borderShadow={borderShadow}>
-            <Icon>
+        <StyledMove onClick={() => onClick?.()} borderColor={borderColor} borderShadow={borderShadow} padding={padding}>
+            <Icon iconWidth={iconWidth} iconHeight={iconHeight}>
                 <img alt={moveName} src={icon} />
             </Icon>
         </StyledMove>
