@@ -48,12 +48,17 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.6rem;
         line-height: 1;
         min-height: 100vh;
-        background: linear-gradient(var(--color-dark-blue-600));
+        background: radial-gradient(at 50% 0%, var(--color-dark-blue-600), var(--color-dark-blue-500));
         background-size: cover;
         overflow: hidden;
 
         transition: color 0.3s, background-color 0.3s;
-        
+    }
+
+    button{
+        border: none;
+        cursor: pointer;
+            
     }
 
     @media (max-width: 76em){

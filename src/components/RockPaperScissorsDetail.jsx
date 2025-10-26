@@ -2,9 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import Move from "./Move";
 import ChoosingProcess from "./ChoosingProcess";
+import { useMoves } from "../contexts/MovesContext";
 
 const StyledRockPaperScissorsDetail = styled.div`
-    margin-top: 9.6rem;
+    margin-top: 4rem;
 
     display: flex;
     flex-direction: column;
@@ -28,14 +29,29 @@ const NodeContainer = styled.div`
     gap: 12.8rem;
 `;
 
-function RockPaperScissorsDetail({ moves }) {
+function RockPaperScissorsDetail({ onChangeScore }) {
+    const { moves } = useMoves();
+    const [winner, setWinner] = useState(null);
     const [userMove, setUserMove] = useState(null);
     const [botMove, setBotMove] = useState(null);
+
+    function resetState() {
+        setWinner(null);
+        setUserMove(null);
+        setBotMove(null);
+    }
 
     return (
         <StyledRockPaperScissorsDetail determiningWinnerProcess={Boolean(userMove)}>
             {userMove ? (
-                <ChoosingProcess userMove={userMove} botMove={botMove} onSetBotMove={setBotMove} />
+                <ChoosingProcess
+                    userMove={userMove}
+                    botMove={botMove}
+                    onSetBotMove={setBotMove}
+                    onSetWinner={setWinner}
+                    onChangeScore={onChangeScore}
+                    onPlayAgain={resetState}
+                />
             ) : (
                 <>
                     <NodeContainer>

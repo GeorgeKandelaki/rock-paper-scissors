@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import Ripple from "./Ripple";
 
 const StyledMove = styled.div`
     padding: ${(props) => props.padding};
     border-radius: 50%;
     background-color: #fff;
     border: 2.5rem solid var(${(props) => props.borderColor});
-    box-shadow: 0 1.2rem rgba(0, 0, 0, 0.15) inset, 0 1rem 1px 2px ${(props) => props.borderShadow};
+    box-shadow: 0 1rem rgba(0, 0, 0, 0.15) inset, 0 0.8rem 1px 2px ${(props) => props.borderShadow};
 
     display: flex;
     justify-content: center;
@@ -22,6 +23,7 @@ const Icon = styled.div`
 `;
 
 function Move({
+    winner,
     moveName,
     onClick,
     borderColor,
@@ -36,6 +38,7 @@ function Move({
             <Icon iconWidth={iconWidth} iconHeight={iconHeight}>
                 <img alt={moveName} src={icon} />
             </Icon>
+            {winner && <Ripple />}
         </StyledMove>
     );
 }

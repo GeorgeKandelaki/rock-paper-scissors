@@ -2,34 +2,12 @@ import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./components/Header";
 import RockPaperScissorsDetail from "./components/RockPaperScissorsDetail";
-
-const moves = [
-    {
-        name: "rock",
-        value: 1,
-        icon: "/public/images/icon-rock.svg",
-        borderColor: "--color-red-300",
-        borderShadow: "rgba(221, 64, 93, 0.6)",
-    },
-    {
-        name: "paper",
-        value: 2,
-        icon: "/public/images/icon-paper.svg",
-        borderColor: "--color-blue-300",
-        borderShadow: "rgba(86, 113, 245, 0.6)",
-    },
-    {
-        name: "scissor",
-        value: 0,
-        icon: "/public/images/icon-scissors.svg",
-        borderColor: "--color-yellow-300",
-        borderShadow: "rgba(236, 169, 34, 0.6)",
-    },
-];
+import { MovesProvider } from "./contexts/MovesContext";
+import { useState } from "react";
 
 const StyledApp = styled.div`
     color: #fff;
-    margin-top: 6.4rem;
+    margin-top: 4rem;
 
     display: flex;
     flex-direction: column;
@@ -59,14 +37,18 @@ const Rules = styled.button`
 `;
 
 function App() {
+    const [score, setScore] = useState(12);
+
     return (
         <>
             <GlobalStyles />
-            <StyledApp>
-                <Header />
-                <RockPaperScissorsDetail moves={moves} />
-            </StyledApp>
-            <Rules>rules</Rules>
+            <MovesProvider>
+                <StyledApp>
+                    <Header score={score} />
+                    <RockPaperScissorsDetail onChangeScore={setScore} />
+                </StyledApp>
+                <Rules>rules</Rules>
+            </MovesProvider>
         </>
     );
 }

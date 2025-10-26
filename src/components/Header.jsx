@@ -41,7 +41,7 @@ const Score = styled.div`
     }
 `;
 
-function Header() {
+function Header({ score }) {
     return (
         <StyledHeader>
             <div>
@@ -51,7 +51,7 @@ function Header() {
             </div>
             <Score>
                 <span>score</span>
-                <p>12</p>
+                <p>{score}</p>
             </Score>
         </StyledHeader>
     );
