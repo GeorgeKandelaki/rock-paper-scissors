@@ -11,6 +11,7 @@ const StyledMove = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 `;
 
 const Icon = styled.div`
@@ -34,12 +35,26 @@ function Move({
     iconHeight = "7rem",
 }) {
     return (
-        <StyledMove onClick={() => onClick?.()} borderColor={borderColor} borderShadow={borderShadow} padding={padding}>
-            <Icon iconWidth={iconWidth} iconHeight={iconHeight}>
-                <img alt={moveName} src={icon} />
-            </Icon>
+        <div
+            style={{
+                position: "relative",
+                display: "inline-block",
+                boxShadow: "0 0 0 0 rgba(0,0,0,1)",
+                borderRadius: "50%",
+            }}
+        >
             {winner && <Ripple />}
-        </StyledMove>
+            <StyledMove
+                onClick={() => onClick?.()}
+                borderColor={borderColor}
+                borderShadow={borderShadow}
+                padding={padding}
+            >
+                <Icon iconWidth={iconWidth} iconHeight={iconHeight}>
+                    <img alt={moveName} src={icon} />
+                </Icon>
+            </StyledMove>
+        </div>
     );
 }
 

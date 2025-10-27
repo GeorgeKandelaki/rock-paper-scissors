@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
         // Neutral
         --text-dark:hsl(229, 25%, 31%);
         --text-score:hsl(229, 64%, 46%);
-        --outline-header:hsl(217, 16%, 45%) ;
+        --outline-header:rgba(96, 110, 133, 1) ;
         --color-white-0: #fff;
 
         // Background

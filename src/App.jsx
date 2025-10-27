@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import RockPaperScissorsDetail from "./components/RockPaperScissorsDetail";
 import { MovesProvider } from "./contexts/MovesContext";
 import { useState } from "react";
+import Rules from "./components/Rules";
+import Modal from "./ui/Modal";
 
 const StyledApp = styled.div`
     color: #fff;
@@ -15,7 +17,7 @@ const StyledApp = styled.div`
     justify-content: center;
 `;
 
-const Rules = styled.button`
+const RulesButton = styled.button`
     position: absolute;
     right: 1%;
     bottom: 2%;
@@ -47,7 +49,15 @@ function App() {
                     <Header score={score} />
                     <RockPaperScissorsDetail onChangeScore={setScore} />
                 </StyledApp>
-                <Rules>rules</Rules>
+
+                <Modal>
+                    <Modal.Open opens="rules">
+                        <RulesButton>Rules</RulesButton>
+                    </Modal.Open>
+                    <Modal.Window name="rules">
+                        <Rules />
+                    </Modal.Window>
+                </Modal>
             </MovesProvider>
         </>
     );

@@ -8,10 +8,10 @@ const StyledModal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--color-grey-0);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
-    padding: 3.2rem 4rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
+    padding: 3.2rem 4.8rem;
     transition: all 0.5s;
 `;
 

@@ -34,10 +34,12 @@ const UserText = styled.p`
     font-weight: 600;
     font-size: 2rem;
     grid-column: 1 / 2;
+    z-index: 4;
 `;
 
 const HouseText = styled(UserText)`
     grid-column: 3 / -1;
+    z-index: 4;
 `;
 
 function determineWinner(userMove, botMove) {
