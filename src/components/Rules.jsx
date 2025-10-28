@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import rulesImage from "../../public/images/image-rules.svg";
 
 const StyledRules = styled.div`
     background-color: #fff;
@@ -19,7 +20,7 @@ function Rules() {
     return (
         <StyledRules>
             <Heading>Rules</Heading>
-            <img src="/public/images/image-rules.svg" alt="image of the rules" />
+            <img src={rulesImage} alt="image of the rules" />
         </StyledRules>
     );
 }
